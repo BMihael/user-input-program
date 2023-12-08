@@ -7,10 +7,10 @@ import static com.soft.app.task.impl.symboloccurrence.SymbolOccurrenceMessages.M
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class SymbolOccurrenceTaskTest {
+public class SymbolOccurrenceTaskTest {
 
     @Test
-    void executeTaskLogic1() {
+    public void test1() {
         SymbolInputProcessor inputProcessor = mock(SymbolInputProcessor.class);
         when(inputProcessor.processUserInput()).thenReturn("symbols");
 
@@ -22,7 +22,7 @@ class SymbolOccurrenceTaskTest {
     }
 
     @Test
-    void executeTaskLogic2() {
+    public void test2() {
         SymbolInputProcessor inputProcessor = mock(SymbolInputProcessor.class);
         when(inputProcessor.processUserInput()).thenReturn("mmaabba");
 
@@ -34,7 +34,7 @@ class SymbolOccurrenceTaskTest {
     }
 
     @Test
-    void executeTaskLogic3() {
+    public void test3() {
         SymbolInputProcessor inputProcessor = mock(SymbolInputProcessor.class);
         when(inputProcessor.processUserInput()).thenReturn("ab");
 

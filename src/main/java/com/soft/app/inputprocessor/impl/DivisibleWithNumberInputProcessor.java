@@ -21,7 +21,7 @@ import static com.soft.app.task.impl.divisiblewithnumber.DivisibleWithNumbersMes
 public class DivisibleWithNumberInputProcessor extends InputProcessor<Integer> {
 
     @Override
-    protected Optional<Integer> getUserInput(Scanner scanner) {
+    protected Optional<Integer> getUserInput() {
         String num;
         try {
             num = scanner.next();
@@ -30,13 +30,10 @@ public class DivisibleWithNumberInputProcessor extends InputProcessor<Integer> {
             return Optional.of(number);
         } catch (Exception e) {
             logger.log(Level.INFO, e.getMessage());
-        } finally {
-            scanner.nextLine();
         }
         return Optional.empty();
     }
 
-    @Override
     public void validateResult(Integer value) {
         if (value < 0 || value > 100) {
             throw new InvalidNumberException(String.format(NUMBER_BETWEEN_RANGE, 0, 100));

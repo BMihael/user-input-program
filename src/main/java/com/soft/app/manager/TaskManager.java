@@ -11,7 +11,6 @@ import java.util.List;
  * The tasks are instances of the{@link com.soft.app.task.Task} class, which
  * must implement the necessary methods for starting and ending a task.
  */
-
 public class TaskManager {
     private final List<Task> tasks = new ArrayList<>();
 

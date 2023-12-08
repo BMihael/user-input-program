@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class DivisibleWithNumbersTaskTest {
+public class DivisibleWithNumbersTaskTest {
 
     @Test
-    void executeTaskLogic() {
+    public void test1() {
         DivisibleWithNumberInputProcessor inputProcessor = mock(DivisibleWithNumberInputProcessor.class);
         when(inputProcessor.processUserInput()).thenReturn(15);
 

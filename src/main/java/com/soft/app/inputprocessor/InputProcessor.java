@@ -19,32 +19,23 @@ public abstract class InputProcessor<T> {
 
     protected final static Logger logger = Logger.getLogger(Task.class.getName());
 
-    private Scanner scanner;
+    protected static final Scanner scanner = new Scanner(System.in);
 
-    public InputProcessor() {
-        this.scanner = new Scanner(System.in);
-    }
-
-    protected abstract Optional<T> getUserInput(Scanner scanner);
-
-    protected abstract void validateResult(T value);
+    protected abstract Optional<T> getUserInput();
 
     public T processUserInput() {
-        Scanner scanner = new Scanner(System.in);
-        boolean endProcessOfEntering = false;
         Optional<T> result;
         try {
-            while (!endProcessOfEntering) {
-                result = getUserInput(scanner);
+            while (true) {
+                result = getUserInput();
                 if (result.isPresent()) {
                     return result.get();
                 }
-
             }
         } catch (Exception e) {
             logger.log(Level.INFO, e.getMessage());
+            throw new UnexpectedException(UNEXPECTED_EXCEPTION_MESSAGE);
         }
-
-        throw new UnexpectedException(UNEXPECTED_EXCEPTION_MESSAGE);
     }
+
 }

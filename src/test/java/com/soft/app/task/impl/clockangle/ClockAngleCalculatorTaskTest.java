@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-class ClockAngleCalculatorTaskTest {
+public class ClockAngleCalculatorTaskTest {
 
     @Test
-    void executeTaskLogic() {
+    public void test1() {
         ClockAngleInputProcessor inputProcessor = mock(ClockAngleInputProcessor.class);
         when(inputProcessor.processUserInput()).thenReturn("05:05");
 

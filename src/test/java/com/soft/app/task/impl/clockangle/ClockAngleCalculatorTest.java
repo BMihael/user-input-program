@@ -26,7 +26,7 @@ public class ClockAngleCalculatorTest {
 
     @ParameterizedTest
     @MethodSource("listOfArguments")
-    void test(double hours, double minutes, double result) {
+    public void test1(double hours, double minutes, double result) {
         assertEquals(result, new ClockAngleCalculator(hours, minutes).calculate());
     }
 
