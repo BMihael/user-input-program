@@ -1,0 +1,16 @@
+com\soft\app\task\impl\divisiblewithnumber\TargetNumber.class
+com\soft\app\task\impl\clockangle\ClockAngleCalculatorMessages.class
+com\soft\app\task\impl\divisiblewithnumber\DivisibleWithNumbersMessages.class
+com\soft\app\manager\TaskManager.class
+com\soft\app\model\Messages.class
+com\soft\app\task\impl\symboloccurrence\SymbolOccurrenceTask.class
+com\soft\app\task\impl\divisiblewithnumber\DivisibleWithNumbersTask.class
+com\soft\app\exception\InvalidNumberException.class
+com\soft\app\task\impl\symboloccurrence\SymbolOccurrenceMessages.class
+com\soft\app\exception\LimitedInputException.class
+com\soft\app\App.class
+com\soft\app\task\Task.class
+com\soft\app\task\impl\BaseTask.class
+com\soft\app\task\impl\clockangle\ClockAngleCalculatorTask.class
+com\soft\app\task\impl\clockangle\ClockConst.class
+com\soft\app\task\impl\clockangle\ClockAngleCalculator.class
