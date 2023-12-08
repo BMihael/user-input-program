@@ -26,9 +26,8 @@ public class ClockAngleInputProcessor extends InputProcessor<String> {
     private static final ClockConst HOURS = ClockConst.HOURS;
     private static final ClockConst MINUTES = ClockConst.MINUTES;
 
-
     @Override
-    protected Optional<String> getUserInput(Scanner scanner) {
+    public Optional<String> getUserInput() {
         String result;
         try {
             result = scanner.next();
@@ -36,13 +35,10 @@ public class ClockAngleInputProcessor extends InputProcessor<String> {
             return Optional.of(result);
         } catch (Exception e) {
             logger.log(Level.INFO, e.getMessage());
-        } finally {
-            scanner.close();
         }
         return Optional.empty();
     }
 
-    @Override
     protected void validateResult(String value) {
         validateText(value);
 

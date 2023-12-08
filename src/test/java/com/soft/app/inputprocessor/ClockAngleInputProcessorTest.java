@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ClockAngleInputProcessorTest {
+public class ClockAngleInputProcessorTest {
 
     private static final String text_invalid = "symbols";
     private static final String text_valid = "11:21";
@@ -17,39 +17,27 @@ class ClockAngleInputProcessorTest {
     private static final String not_number = "NotNumber";
 
     @Test
-    void validateText_Invalid() {
-        assertThrows(InvalidNumberException.class, () -> {
-            new ClockAngleInputProcessor().validateText(text_invalid);
-        });
+    public void validateText_Invalid() {
+        assertThrows(InvalidNumberException.class, () -> new ClockAngleInputProcessor().validateText(text_invalid));
     }
 
     @Test
-    void validateText_Valid() {
-        assertDoesNotThrow(() -> {
-            new ClockAngleInputProcessor().validateText(text_valid);
-        });
-
-
+    public void validateText_Valid() {
+        assertDoesNotThrow(() -> new ClockAngleInputProcessor().validateText(text_valid));
     }
 
     @Test
     void validateNumber_valid_number() {
-        assertDoesNotThrow(() -> {
-            new ClockAngleInputProcessor().validateNumber(number_valid, ClockConst.HOURS);
-        });
+        assertDoesNotThrow(() -> new ClockAngleInputProcessor().validateNumber(number_valid, ClockConst.HOURS));
     }
 
     @Test
     void validateNumber_Invalid_number() {
-        assertThrows(InvalidNumberException.class, () -> {
-            new ClockAngleInputProcessor().validateNumber(number_toHigh, ClockConst.HOURS);
-        });
+        assertThrows(InvalidNumberException.class, () -> new ClockAngleInputProcessor().validateNumber(number_toHigh, ClockConst.HOURS));
     }
 
     @Test
     void validateNumber_not_number() {
-        assertThrows(InvalidNumberException.class, () -> {
-            new ClockAngleInputProcessor().validateNumber(not_number, ClockConst.HOURS);
-        });
+        assertThrows(InvalidNumberException.class, () -> new ClockAngleInputProcessor().validateNumber(not_number, ClockConst.HOURS));
     }
 }

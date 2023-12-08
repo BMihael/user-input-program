@@ -8,7 +8,6 @@ import java.util.*;
 
 import static com.soft.app.task.impl.symboloccurrence.SymbolOccurrenceMessages.*;
 
-
 /**
  * This class provides methods for handling user input, validating input values,
  * and executing logic to determine the most frequently occurring symbol in the entered text.
