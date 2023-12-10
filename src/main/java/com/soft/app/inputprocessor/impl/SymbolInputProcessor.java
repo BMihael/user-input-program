@@ -21,7 +21,7 @@ import static com.soft.app.task.impl.symboloccurrence.SymbolOccurrenceMessages.L
 public class SymbolInputProcessor extends InputProcessor<String> {
 
     @Override
-    public Optional<String> getUserInput() {
+    protected Optional<String> getUserInput() {
         String result;
         try {
             result = scanner.next();
@@ -29,8 +29,9 @@ public class SymbolInputProcessor extends InputProcessor<String> {
             return Optional.of(result);
         } catch (Exception e) {
             logger.log(Level.INFO, e.getMessage());
+            return Optional.empty();
         }
-        return Optional.empty();
+
     }
 
     public void validateResult(String value) {

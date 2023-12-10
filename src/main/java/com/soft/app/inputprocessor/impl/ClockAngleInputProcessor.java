@@ -5,7 +5,6 @@ import com.soft.app.inputprocessor.InputProcessor;
 import com.soft.app.task.impl.clockangle.ClockConst;
 
 import java.util.Optional;
-import java.util.Scanner;
 import java.util.logging.Level;
 
 import static com.soft.app.task.impl.clockangle.ClockAngleCalculatorMessages.INPUT_INVALID;
@@ -27,7 +26,7 @@ public class ClockAngleInputProcessor extends InputProcessor<String> {
     private static final ClockConst MINUTES = ClockConst.MINUTES;
 
     @Override
-    public Optional<String> getUserInput() {
+    protected Optional<String> getUserInput() {
         String result;
         try {
             result = scanner.next();
@@ -35,8 +34,8 @@ public class ClockAngleInputProcessor extends InputProcessor<String> {
             return Optional.of(result);
         } catch (Exception e) {
             logger.log(Level.INFO, e.getMessage());
+            return Optional.empty();
         }
-        return Optional.empty();
     }
 
     protected void validateResult(String value) {
