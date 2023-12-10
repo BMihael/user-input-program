@@ -25,16 +25,11 @@ public abstract class InputProcessor<T> {
 
     public T processUserInput() {
         Optional<T> result;
-        try {
-            while (true) {
-                result = getUserInput();
-                if (result.isPresent()) {
-                    return result.get();
-                }
+        while (true) {
+            result = getUserInput();
+            if (result.isPresent()) {
+                return result.get();
             }
-        } catch (Exception e) {
-            logger.log(Level.INFO, e.getMessage());
-            throw new UnexpectedException(UNEXPECTED_EXCEPTION_MESSAGE);
         }
     }
 

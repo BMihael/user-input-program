@@ -1,7 +1,5 @@
 package com.soft.app.inputprocessor.impl;
 
-import java.util.Scanner;
-
 import com.soft.app.exception.InvalidNumberException;
 import com.soft.app.inputprocessor.InputProcessor;
 
@@ -25,13 +23,13 @@ public class DivisibleWithNumberInputProcessor extends InputProcessor<Integer> {
         String num;
         try {
             num = scanner.next();
-            Integer number = Integer.parseInt(num);
-            validateResult(number);
-            return Optional.of(number);
+            Integer result = Integer.parseInt(num);
+            validateResult(result);
+            return Optional.of(result);
         } catch (Exception e) {
             logger.log(Level.INFO, e.getMessage());
+            return Optional.empty();
         }
-        return Optional.empty();
     }
 
     public void validateResult(Integer value) {
