@@ -20,7 +20,7 @@ public class ClockAngleCalculatorMessages {
     /**
      * Message indicates the calculated angle between two values..
      */
-    public static final String CALCULATED_ANGLE = "Calculated angle between %.2f and %.2f is: %.2f.";
+    public static final String CALCULATED_ANGLE = "Calculated angle between %s and %s is: %s.";
 
     /**
      * Indicates that the clock value is invalid.

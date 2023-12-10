@@ -4,6 +4,8 @@ import com.soft.app.inputprocessor.InputProcessor;
 import com.soft.app.inputprocessor.impl.ClockAngleInputProcessor;
 import com.soft.app.task.impl.BaseTask;
 
+import java.math.BigDecimal;
+
 import static com.soft.app.task.impl.clockangle.ClockAngleCalculatorMessages.*;
 
 /**
@@ -30,12 +32,12 @@ public class ClockAngleCalculatorTask extends BaseTask<String> {
         String clockAngle = inputProcessor.processUserInput();
 
         String[] clockTime = clockAngle.split(SEPARATOR);
-        double hours = Double.parseDouble(clockTime[0]);
-        double minutes = Double.parseDouble(clockTime[1]);
+        String hours = clockTime[0];
+        String minutes = clockTime[1];
 
-        double result = new ClockAngleCalculator(hours, minutes).calculate();
+        BigDecimal result = new ClockAngleCalculator(new BigDecimal(hours), new BigDecimal(minutes)).calculate();
         System.out.printf((CALCULATED_ANGLE) + "%n", hours, minutes, result);
-        return Double.toString(result);
+        return result.toString();
     }
 
 }

@@ -1,28 +1,31 @@
 package com.soft.app.task.impl.clockangle;
 
+import java.math.BigDecimal;
+
 /**
  * Class designed to calculate the angle corresponding to a given time on a clock.
  */
 public class ClockAngleCalculator {
 
-    private final double hours;
-    private final double minutes;
+    private final BigDecimal hours;
+    private final BigDecimal minutes;
 
-    ClockAngleCalculator(double hours, double minutes) {
+    ClockAngleCalculator(BigDecimal hours, BigDecimal minutes) {
         this.hours = hours;
         this.minutes = minutes;
     }
 
-    double calculate() {
-        double hourAngle = 0.5 * (60 * this.hours + this.minutes);
-        double minuteAngle = 6 * this.minutes;
+    BigDecimal calculate() {
+        BigDecimal hourAngle = BigDecimal.valueOf(0.5).multiply((BigDecimal.valueOf(60).multiply(this.hours)).add(this.minutes));
 
-        double angle = hourAngle - minuteAngle;
+        BigDecimal minuteAngle = BigDecimal.valueOf(6).multiply(this.minutes);
 
-        angle = (angle + 360) % 360;
+        BigDecimal angle = hourAngle.subtract(minuteAngle);
 
-        if (angle > 180) {
-            angle = 360 - angle;
+        angle = (angle.add(BigDecimal.valueOf(360))).remainder(BigDecimal.valueOf(360));
+
+        if (angle.compareTo(BigDecimal.valueOf(180)) > 0) {
+            angle = BigDecimal.valueOf(360).subtract(angle);
         }
         return angle;
     }
